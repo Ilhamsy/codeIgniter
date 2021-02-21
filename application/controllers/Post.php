@@ -26,7 +26,7 @@
             $config['num_tag_close']='</li>';
             $config['attributes']=['class'=>'page-link'];
 
-            if ($this->session->userdata('keyword'==false)) {
+            if ($this->session->userdata('keyword'==FALSE)) {
                 $this->session->set_userdata('keyword','');
             }
 
@@ -49,7 +49,11 @@
             );
             
             $this->load->view('templates/header', $data);
-            $this->load->view('post/index', $data);
+            if (logged_in()) {
+                $this->load->view('post/index', $data);
+            } else {
+                $this->load->view('post/index2', $data);
+            }            
             $this->load->view('templates/footer');
         }
         public function tambah() {
@@ -58,7 +62,7 @@
                 $this->form_validation->set_rules('judul','Judul Post','required');
                 $this->form_validation->set_rules('isi','Isi Post','required');
 
-                if ($this->form_validation->run()==false) {
+                if ($this->form_validation->run()==FALSE) {
                     $this->load->view('templates/header', $data);
                     $this->load->view('post/tambah');
                     $this->load->view('templates/footer');
@@ -78,7 +82,7 @@
             echo "Succesfully!";
         }
         public function update($id) {
-            $data['judul'] = "Update Post";
+            $data['judul'] = "Update Dongeng";
             $data['post'] = $this->Post_model->getPostById($id);
             $this->load->view('templates/header', $data);
             $this->load->view('post/update', $data);
@@ -93,8 +97,10 @@
             redirect(base_url()."post");
         }
         public function lihat($id) {
-            //$this->Post_model->lihat($id);
+            $data['judul']="Lihat Dongeng";
             $data['sinopsis']=$this->Post_model->lihat($id);
+            $this->load->view('templates/header',$data);
             $this->load->view('post/lihat',$data);
+            $this->load->view('templates/footer');
         }
     }
