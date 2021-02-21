@@ -37,10 +37,10 @@
                 $data['keyword']=$_SESSION['keyword'];
             }
             $config['total_rows']=$this->Post_model->countPosts($data['keyword']);
-            $config['per_page']=9;
+            $config['per_page']=5;
             $this->pagination->initialize($config);
             $data['start']=$this->uri->segment(3);
-            $data['judul']="Halaman Post";
+            $data['judul']="Halaman Dongeng";
             
             $data['posts']=$this->Post_model->getPosts(
                 $config['per_page'],
@@ -54,7 +54,7 @@
         }
         public function tambah() {
             if (logged_in()) {
-                $data['judul'] = "Tambah Post";
+                $data['judul'] = "Tambah Dongeng";
                 $this->form_validation->set_rules('judul','Judul Post','required');
                 $this->form_validation->set_rules('isi','Isi Post','required');
 
@@ -91,5 +91,10 @@
         public function hapus($id) {
             $this->Post_model->hapusPost($id);
             redirect(base_url()."post");
+        }
+        public function lihat($id) {
+            //$this->Post_model->lihat($id);
+            $data['sinopsis']=$this->Post_model->lihat($id)->result();
+            $this->load->view('post/lihat',$data);
         }
     }

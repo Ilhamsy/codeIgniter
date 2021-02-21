@@ -25,7 +25,7 @@
       <li class="nav-item">
         <form action="<?= base_url(); ?>post" method="POST" class="form-inline my-2 my-lg-0">
           <input type="hidden" value="" name="keyword">
-          <button class="nav-link btn" type="submit" name="submit">Post</button>
+          <button class="nav-link btn" type="submit" name="submit">Dongeng</button>
         </form>
       </li>
     </ul>

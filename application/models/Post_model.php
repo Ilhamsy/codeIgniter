@@ -3,47 +3,52 @@
         public function tambahPost() {
             $data = array(
                 'judul'=> $this->input->post('judul'),
-                'isi' => $this->input->post('isi')
+                'sinopsis' => $this->input->post('sinopsis')
             );
             $this->db->insert('posts',$data);
         }
         public function getAllPost() {
             return $this->db
-            ->select("id_post,judul,SUBSTRING(isi,1,150) as isi")
-            ->get('posts')
+            ->select("id_sinopsis,judul,SUBSTRING(sinopsis,1,150) as sinopsis")
+            ->get('sinopsis')
             ->result_array();
         }
         public function getPosts($limit, $start, $keyword=null) {
             $keyword=$keyword;
             return $this->db
-            ->select("id_post,judul,SUBSTRING(isi,1,150) as isi")
+            ->select("id_sinopsis,judul,SUBSTRING(sinopsis,1,150) as sinopsis")
             ->like('judul', $keyword)
-            ->order_by('id_post','asc')
-            ->get('posts', $limit, $start)
+            ->order_by('id_sinopsis','asc')
+            ->get('sinopsis', $limit, $start)
             ->result_array();
             
         }
         public function countPosts($keyword=null) {
-            return $this->db->like('judul', $keyword)->from('posts')->count_all_results();
+            return $this->db->like('judul', $keyword)->from('sinopsis')->count_all_results();
         }
         public function getPostById($id) {
             return $this->db
-            ->select("id_post,judul,isi")
-            ->where('id_post',$id)
-            ->get('posts')
+            ->select("id_sinopsis,judul,sinopsis")
+            ->where('id_sinopsis',$id)
+            ->get('sinopsis')
             ->result_array();
         }
         public function updatePost($id) {
             $data=array(
                 'judul'=>$this->input->post('judul'),
-                'isi'=>$this->input->post('isi')
+                'sinopsis'=>$this->input->post('sinopsis')
             );
 
-            $this->db->where('id_post', $id)->update('posts', $data);
+            $this->db->where('sinopsis', $id)->update('sinopsis', $data);
         }
         public function hapusPost($id) {
             $this->db
-            ->where('id_post',$id)
-            ->delete('posts');
+            ->where('id_sinopsis',$id)
+            ->delete('sinopsis');
+        }
+        public function lihat($id) {
+            return $this->db
+            ->where('id_sinopsis',$id)
+            ->get('sinopsis');
         }
     }
