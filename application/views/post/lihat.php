@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row mt-4"> 
         <div class="col-md-4">
-        <?php foreach($post as $post): ?>
+        <?php foreach($sinopsis as $post): ?>
             <div class="card">
                 <div class="card-header">
                     Lihat Dongeng

@@ -94,7 +94,7 @@
         }
         public function lihat($id) {
             //$this->Post_model->lihat($id);
-            $data['sinopsis']=$this->Post_model->lihat($id)->result();
+            $data['sinopsis']=$this->Post_model->lihat($id);
             $this->load->view('post/lihat',$data);
         }
     }

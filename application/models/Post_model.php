@@ -5,7 +5,7 @@
                 'judul'=> $this->input->post('judul'),
                 'sinopsis' => $this->input->post('sinopsis')
             );
-            $this->db->insert('posts',$data);
+            $this->db->insert('sinopsis',$data);
         }
         public function getAllPost() {
             return $this->db
@@ -49,6 +49,6 @@
         public function lihat($id) {
             return $this->db
             ->where('id_sinopsis',$id)
-            ->get('sinopsis');
+            ->get('sinopsis')->result_array();
         }
     }
