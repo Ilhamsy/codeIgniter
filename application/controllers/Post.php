@@ -6,7 +6,7 @@
         }
         public function index() {
             $this->load->library('pagination');
-            $config['base_url']='http://localhost:8012/ci/post/index';
+            $config['base_url']='https://projek-kp.herokuapp.com/post/index';
             
             $config['full_tag_open']='<nav><ul class="justify-content-center pagination">';
             $config['full_tag_close']='</ul></nav>';
