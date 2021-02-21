@@ -74,12 +74,12 @@ $active_group = 'default';
 $query_builder = TRUE;
 
 $db['default'] = array(
-	'dsn'	=> 'pgsql:host=localhost;port=5432;dbname=ci3kp;user=postgres;password=1405',
+	'dsn'	=> getenv('DATABASE_URL'),
 	'hostname' => 'localhost',
-	'username' => 'postgres',
-	'password' => '1405',
-	'database' => 'ci3kp',
-	'dbdriver' => 'pdo',
+	'username' => '',
+	'password' => '',
+	'database' => '',
+	'dbdriver' => 'postgre',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
 	'db_debug' => (ENVIRONMENT !== 'production'),
