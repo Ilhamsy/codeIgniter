@@ -59,8 +59,8 @@
         public function tambah() {
             if (logged_in()) {
                 $data['judul'] = "Tambah Dongeng";
-                $this->form_validation->set_rules('judul','Judul Post','required');
-                $this->form_validation->set_rules('isi','Isi Post','required');
+                $this->form_validation->set_rules('judul','Judul Dongeng','required');
+                $this->form_validation->set_rules('sinopsis','Sinopsis Dongeng','required');
 
                 if ($this->form_validation->run()==FALSE) {
                     $this->load->view('templates/header', $data);
@@ -79,7 +79,7 @@
         }
         public function prosesTambah() {
             $this->Post_model->tambahPost();
-            echo "Succesfully!";
+            redirect(base_url()."post");
         }
         public function update($id) {
             $data['judul'] = "Update Dongeng";
