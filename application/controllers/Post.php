@@ -42,7 +42,7 @@
             $data['start']=$this->uri->segment(3);
             $data['judul']="Halaman Dongeng";
             
-            $data['posts']=$this->Post_model->getPosts(
+            $data['sinopsis']=$this->Post_model->getPosts(
                 $config['per_page'],
                 $data['start'],
                 $data['keyword']
