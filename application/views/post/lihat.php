@@ -13,7 +13,7 @@
                         </div>
                         <div class="form-group">
                             <label for="isi">Isi</label>
-                            <textarea class="form-control" name="isi" id="isi" placeholder="Masukkan isi" rows="3" required><?= $post['sinopsis'] ?></textarea>
+                            <textarea class="form-control" name="sinopsis" id="sinopsis" placeholder="Masukkan isi" rows="3" required><?= $post['sinopsis'] ?></textarea>
                         </div>
                         <a href="<?= base_url() ?>post" class="btn btn-secondary">Selesai</a>
                 </div>

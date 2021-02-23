@@ -12,7 +12,7 @@
   </div>
   <div class="form-group">
     <label for="isi">Isi</label>
-    <textarea class="form-control" name="isi" id="isi" placeholder="Masukkan isi" required></textarea>
+    <textarea class="form-control" name="sinopsis" id="sinopsis" placeholder="Masukkan isi" required></textarea>
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
