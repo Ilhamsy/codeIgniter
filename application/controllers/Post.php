@@ -31,7 +31,7 @@
             }
 
             if (isset($_POST['submit'])) {
-                $data['keyword']=$this->input->post('keyword');
+                $data['keyword']=$_POST['keyword'];
                 $this->session->set_userdata('keyword', $data['keyword']);
             } else {
                 $data['keyword']=$_SESSION['keyword'];
