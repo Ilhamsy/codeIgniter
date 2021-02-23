@@ -23,7 +23,7 @@
         <a class="nav-link" href="<?= base_url(); ?>">Home</a>
       </li>
       <li class="nav-item">
-      <a class="nav-link" href="<?= base_url(); ?."post">">Dongeng</a>
+      <a class="nav-link" href="<?= base_url(); ?>post">Dongeng</a>
       </li>
     </ul>
     <?php if (logged_in()) : ?>
