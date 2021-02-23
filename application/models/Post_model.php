@@ -39,7 +39,7 @@
                 'sinopsis'=>$this->input->post('sinopsis')
             );
 
-            $this->db->where('sinopsis', $id)->update('sinopsis', $data);
+            $this->db->where('id_sinopsis', $id)->update('sinopsis', $data);
         }
         public function hapusPost($id) {
             $this->db
