@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-md-4 d-flex justify-content-between">
             <h1>Sinopsis Dongeng</h1>
-            <a href="<?= base_url(); ?>post/tambah" class="btn btn-primary align-slef-center">Tambah Dongeng</a>
+            <a href="<?= base_url(); ?>post/tambah" class="btn btn-primary align-self-center">Tambah Dongeng</a>
         </div>
         <div class="row">
             <div class="col">
